@@ -1,0 +1,30 @@
+function [value] = electricDu(mpc,node_idx)
+%UNTITLED4 此处显示有关此函数的摘要
+%   此处显示详细说明
+define_constants;
+if nargin == 1
+    node_idx = mpc.bus(:,1);         
+end
+
+%% 支路潮流计算结果
+[MVAbase, bus, gen, branch, success, et] = runpf(mpc);
+fromBusSet = branch(:,F_BUS);
+toBusSet = branch(:,T_BUS);
+value = zeros(length(node_idx),1);
+    
+for i = 1:length(node_idx)
+    indexSet1 = find(fromBusSet==node_idx(i))%查找非零元素的索引和值（按节点重新索引分块）
+    indexSet2 = find(toBusSet==node_idx(i))
+    indexSet = [indexSet1;indexSet2];
+    result = 0;
+    for j = 1:length(indexSet)
+    powerP=branch(indexSet(j),PF);
+    powerQ=branch(indexSet(j),QF);
+    powerS=sqrt(powerP.^2+powerQ.^2);
+    result = result + powerS;
+    end
+    value(i) = result;
+end
+
+
+
