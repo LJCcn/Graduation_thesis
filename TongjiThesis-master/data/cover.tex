@@ -1,0 +1,75 @@
+\tongjisetup{
+  %******************************
+  % 注意：
+  %   1. 配置里面不要出现空行
+  %   2. 不需要的配置信息可以删除
+  %******************************
+  %
+  %=====
+  % 秘级
+  %=====
+  secretlevel={保密},
+  secretyear={2},
+  %
+  %=========
+  % 中文信息
+  %=========
+  % 题目过长可以换行。
+  ctitle={空间电源系统脆弱性分析\\与量化评估体系研究},
+  cheadingtitle={空间电源系统脆弱性分析与量化评估体系研究},    %用于页眉的标题，不要换行
+  cauthor={赵闻达},  
+  studentnumber={1531641},
+  cmajorfirst={工学},
+  cmajorsecond={控制科学与工程},
+  cdepartment={电子与信息工程学院},
+  csupervisor={苏永清 ~~副教授}, 
+  % 如果没有副指导老师或者校外指导老师，把{}中内容留空即可，或者直接注释掉。
+  %cassosupervisor={裴刚 教授~（校外）}, % 副指导老师
+  % 日期自动使用当前时间，若需指定按如下方式修改：
+  % cdate={超新星纪元},
+  % 没有基金的话就注释掉吧。
+  cfunds={（国家杰出青年基金 (No.123456789) 支持）},
+  %
+  %=========
+  % 英文信息
+  %=========
+  etitle={Research on Vulnerability Analysis and Quantitative Evaluation of Aerospace Power Supply System}, 
+  eauthor={Zhao Wenda},
+  emajorfirst={Engineering},
+  emajorsecond={Control Science and Engineering},
+  edepartment={College of Electronics and Information Engineering},
+  efunds={(Supported by the Natural Science Foundation of China for\\ Distinguished Young Scholars, Grant No.123456789)},    
+  esupervisor={A.Prof. ~~Su Yongqing},
+ % eassosupervisor={Prof. Gang Pei (XiaoWai)}
+  }
+
+% 定义中英文摘要和关键字
+\begin{cabstract}  
+ 航空航天系统需要稳定且高质量的供电，宇航项目苛刻的工作环境对航空航天空间电源系统的稳定性提出了更高的要求。由于空间电源系统结构复杂，载荷以感性、容性负载居多，电源系统供电时所受的冲击较大。鉴于航空航天系统苛刻的稳定性与可靠性要求，有必要对空间电源系统的稳定性与脆弱性进行分析，识别电源系统的薄弱环节，保证空间电源系统可靠供电。
+
+本文通过研究控制系统稳定性、可靠性以及鲁棒性概念的具体定义，分析了它们与脆弱性概念的区别与联系，结合控制系统脆弱性现象的本质特征，得到清晰明确的脆弱性概念。结合控制系统不确定性、系统灵敏度函数、鲁棒控制理论等相关理论，用数学的方式描述脆弱性特征。鉴于脆弱性概念的主观评价因素，结合多指标综合评价理论，科学地选择脆弱性评价指标并分配权重，建立了控制系统脆弱性量化评估数学模型。
+
+通过查阅航空航天领域极端工作环境相关文献，分析与研究了空间电源控制系统（Power Conditioning Unit，PCU）在极端恶劣环境中电子元器件参数的变化规律。参考科技文献及元器件手册中电子元件在高低温脉冲与辐射实验中的实验结果与曲线，通过曲线拟合及数学推导，建立了航空航天领域电子元器件的失效模型。
+
+以基于~Buck~变换器的空间电源系统为例进行脆弱性分析，并对~Buck~变换器主拓扑电路中电容元件、电感元件以及电阻元件存在不确定性的情况进行脆弱性量化评估。采~Saber~软件进行电源系统电路仿真，根据所建立的航空航天领域电子元器件模型，借助~MATLAB~软件模拟在不同工作环境中电源系统的参数变化，并根据所建立的控制系统脆弱性量化评估体系对空间电源系统进行脆弱性量化分析。根据脆弱性量化分析结果，识别基于~Buck~变换器空间电源系统的薄弱环节。
+
+本文所建立的脆弱性量化评估体系可以科学地分析并量化评估控制系统的脆弱性，识别系统中的薄弱环节。在航空航天电源控制系统电路的设计中，可以参考本文提出的脆弱性量化评估体系的评估结果，对薄弱环节进行优化，改善空间电源系统的性能，从而减少控制系统脆弱的风险，保持长时间良好的工作性能。
+
+\end{cabstract}
+
+\ckeywords{ 航空航天电源,脆弱性,量化评估体系,薄弱环节识别}
+
+\begin{eabstract}
+An aerospace system requires a stable and high-quality power supply due to the extremely harsh working environment typical of the aerospace field. Because of the complexity of power system architecture and the inductive and capacitive loads, the aerospace power system sustains great impacts during operation. Considering the demanding stability and reliability requirements of aerospace systems, it is necessary to analyze the stability and vulnerability of the space power system and identify its weak points to ensure safety and reliability properties.
+
+Definitions of stability, reliability and robustness in control field have been studied in this thesis. By analyzing
+the differences and connections between these properties and vulnerability, a clear concept of vulnerability has been given considering the nature of this phenomenon. Vulnerability of control system has been described in mathematical terms through the study of control system uncertainty, system sensitivity function, robust theory and other related theories. Due to the subjective evaluation factors of vulnerability, a scientific mathematical quantitative evaluation system has been established through multi-index comprehensive evaluation theory.
+
+By reviewing the relevant literature in aerospace fields, the changes of the electronic components' parameters in the extreme environment are analyzed and studied. Based on the experimental results and curves of the electronic components in the temperature pulse and extreme radiation experiments, the degradation models of electronic components in aerospace field are established by means of curve fitting and mathematical deduction.
+
+In this thesis, vulnerability analysis based on Buck converter space power system is carried out. The uncertainties of capacitor, inductor and resistor in the main topology of Buck converter circuit are quantitatively evaluated for vulnerability. Power system circuit is simulated on Saber platform, while the degradation models of electronic components are implemented with MATLAB software to imitate the performance of power system in aerospace field. Based on quantitative analysis of vulnerability, the weak points of Buck converter space power system are identified.
+
+The vulnerability quantitative evaluation system established in this thesis can scientifically analyze and quantify the vulnerability property and identify the weak points of the control system. In the design of aerospace power supply systems, the result of the vulnerability quantitative evaluation system is helpful for the optimization and improvement of the space power system. In this way, the aerospace power system can reduce the risk of vulnerability and keep good performances persistently.
+\end{eabstract}
+
+\ekeywords{Aerospace power system, Vulnerability, Quantitative evaluation , Weak point identification}
