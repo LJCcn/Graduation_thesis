@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- 由 Microsoft Visio, SVG Export 生成 状态图.svg Page-1 -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ev="http://www.w3.org/2001/xml-events"
+		xmlns:v="http://schemas.microsoft.com/visio/2003/SVGExtensions/" width="6.06317in" height="6.04939in"
+		viewBox="0 0 436.548 435.556" xml:space="preserve" color-interpolation-filters="sRGB" class="st2">
+	<v:documentProperties v:langID="2052" v:metric="true" v:viewMarkup="false">
+		<v:userDefs>
+			<v:ud v:nameU="msvNoAutoConnect" v:val="VT0(1):26"/>
+		</v:userDefs>
+	</v:documentProperties>
+
+	<style type="text/css">
+	<![CDATA[
+		.st1 {fill:none;stroke:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.75}
+		.st2 {fill:none;fill-rule:evenodd;font-size:12px;overflow:visible;stroke-linecap:square;stroke-miterlimit:3}
+	]]>
+	</style>
+
+	<g v:mID="0" v:index="1" v:groupContext="foregroundPage">
+		<title>页-1</title>
+		<v:pageProperties v:drawingScale="0.0393701" v:pageScale="0.0393701" v:drawingUnits="24" v:shadowOffsetX="8.50394"
+				v:shadowOffsetY="-8.50394"/>
+		<g id="shape1-1" v:mID="1" v:groupContext="shape" transform="translate(0.375,-0.375)">
+			<title>工作表.1</title>
+			<rect v:rectContext="foreign" x="0" y="0.749987" width="435.798" height="434.806" class="st1"/>
+			<switch>
+				<foreignObject x="0" y="0.749987" width="435.798" height="434.806"
+						requiredExtensions="http://schemas.microsoft.com/visio/2003/SVGExtensions/">
+					<v:foreignData v:orgSize="10960" clip="rect(0 0 0 0)" v:data="data:metafile;base64,eNrtmn9MVecZx99z7gUuCHhFE
+								X9xL6ACCgICUkTUI1DzynQyfy7pWpl2v7ImJbpWk5p4td3SrYlSY9KT1CbEuK3Z0uyOuqzb/rnRNXPtthDXZc41K2GLm5utj
+								LjErQ72/T7nHDz3ikj9EbXdST55v8857/me9zznfe577gVDKfUE+M3IyMg5kBdUKgK8LbdZqX8sU6ro4XWrlTJU30KlXsf+g
+								EreYhlKNeK8UkOpb6cc69obVM8/ZyoYqEpQBGBXYViGmgMdBmY48Uecqrpd2DebOwynb41lSj9naLGVCy2l5kHNcGPfSEZ1r
+								aUMz390s55pIxM5f76lfNdUKmoFVLarS6zgqI5YmaO62MoY1f5rrCuev9TzdfTXW5R6uSXLUjGvz/lTr4wYvqFe+fHx9iMXj
+								rcXQ4fAdubESYn4znPGu9w39lFtgjLX1/N85dR55758Pp6Gf2wL2hrQwjGCI3jIPSCNzyzYFywKqiZrKaHuC3rn4tHHPM1B+
+								Ma2yje2Vf6xrXaf83PuXAhZyqyHLnfngnKPy/bOEXaX871j2EZClhFodsfM/cGUecf8+fNILa1h7M/H3PM/26ZreZhQbreBR
+								lc3uvu9VpUYMqaxNi9Ppk+nublnbVQBTpRXkfcTAWd8zDVzztzzGdxO3st91/fuOct9Hk9gQnS69TaR+phIn9KUGrq7NfXPF
+								hXLbA1ZZsCbW5wXOb78l781uf3gn+fFLyVia4i3j+3v67bJsfK3DrXzGFseY8tjxL/P67N58+44j416Ba5tz2LfNMuMefd8o
+								v/NkfLbrOM3+09cV8dTfXqZO483gw7fvY+4W458XieisYyhvIEp3aF4pDu0r6I71L9kKK9/SSLav+RQ5b6KwYZ4ZLBhYMpgQ
+								yzjUCX7N7u+K9zx7AHfBI9hnj4ZSB7DrXwebAL6Nj4P8pPWiHtf017+HwdPgZ3I0bPgVvP//7q/Qd3HnmxVVgx1H7hh3VtbT
+								qHW+38QvVC1hlzbh/Xh5YJ2HrO2tLbzGFseY8tjxL/P64Osxp1zXa/r6j4wWvevvX3ltuv+ytuv3XbdD+YmooO5uQXD+Socj
+								6jwjjIV7qrKLeiqSkS7qnaV7yiLVccjserh/Fj1YO6ucvZPrftLyrngXzHIK+b9UPeB+7LuOcCL4EN0yHbr/lbyf7fq/lU8s
+								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
+								TVn3v9wMmem7zMhF0xzddjV/wP7lfTf"/>
+				</foreignObject>
+				<svg viewBox="0 0 1004 1004" clip="rect(0 0 0 0)" height="434.806" overflow="hidden" preserveAspectRatio="none"
+						width="435.798" x="0" y="0.749987">
+					<mask id="mfid13">
+						<rect width="1005" height="1005" fill="white" stroke="none"/>
+					</mask>
+					<mask id="mfid14" fill="white" stroke="none">
+						<g>
+							<g mask="url(#mfid13)">
+								<rect width="1004" height="1004" id="mfid15"/>
+							</g>
+						</g>
+					</mask>
+					<!-- Unsupported Record: EmfPlusRecordTypeSetPixelOffsetMode  -->
+					<g mask="url(#mfid14)">
+						<g transform="matrix(0.00015748, 0, 0, 0.00015748, 66.5, 77.5)">
+							<g fill="#9dc3e6">
+								<rect width="5.3975e+06" height="5.4039e+06" stroke="none"/>
+								<defs>
+									<path id="mfid16" d="M0,0 L5397500,0 L5397500,5403900 L0,5403900 Z"/>
+								</defs>
+							</g>
+							<g fill="#9dc3e6" stroke-width="19050" stroke="#000000" stroke-miterlimit="8">
+								<use xlink:href="#mfid16" fill="none"/>
+								<!-- Unsupported Record: EmfPlusRecordTypeSetPixelOffsetMode  -->
+								<defs>
+									<path id="mfid17"
+											d="M0,2355900 C-0.0000000059986,1054700 1054700,0 2355900,0 C3656900,-0.0000000059986 4711700,1054700 4711700,2355900 C4711700,3656900 3656900,4711700 2355900,4711700 C1054700,4711700 -0.0000000089979,3656900 0,2355900 Z"/>
+								</defs>
+							</g>
+						</g>
+						<g transform="matrix(0.00015748, 0, 0, 0.00015748, 120.5, 137.5)">
+							<g fill="#c5e0b4" stroke-width="19050" stroke="#000000" stroke-miterlimit="8">
+								<use xlink:href="#mfid17" fill-rule="evenodd" stroke="none"/>
+								<use xlink:href="#mfid17" fill="none"/>
+								<!-- Unsupported Record: EmfPlusRecordTypeSetPixelOffsetMode  -->
+								<defs>
+									<path id="mfid18"
+											d="M0,1600200 C-0.0000000040745,716430 716430,0 1600200,0 C2484000,-0.0000000040745 3200400,716430 3200400,1600200 C3200400,2484000 2484000,3200400 1600200,3200400 C716430,3200400 -0.0000000061118,2484000 0,1600200 Z"/>
+								</defs>
+							</g>
+						</g>
+						<g transform="matrix(0.00015748, 0, 0, 0.00015748, 239.5, 256.5)">
+							<g fill="#f8cbad" stroke-width="19050" stroke="#000000" stroke-miterlimit="8">
+								<use xlink:href="#mfid18" fill-rule="evenodd" stroke="none"/>
+								<use xlink:href="#mfid18" fill="none"/>
+								<!-- Unsupported Record: EmfPlusRecordTypeSetPixelOffsetMode  -->
+								<defs>
+									<path id="mfid19" d="M2,-4 L0,0 L-2,-4 Z"/>
+								</defs>
+								<defs>
+									<path id="mfid20" d="M0,0 L6300000,1"/>
+								</defs>
+							</g>
+						</g>
+						<g transform="matrix(0.00015748, 0, 0, -0.00015748, 0.5, 502.5)">
+							<g fill="#000000">
+								<marker id="mfid21" markerUnits="strokeWidth" orient="align" overflow="visible">
+									<g transform="rotate(-45)" stroke-linecap="butt" stroke-miterlimit="10">
+										<use xlink:href="#mfid19" fill-rule="nonzero" stroke="none" fill="#000000"/>
+									</g>
+								</marker>
+							</g>
+							<g fill="#f8cbad" stroke-width="19050" stroke="#000000" stroke-linecap="square"
+									marker-end="url(#mfid21)" stroke-miterlimit="8" stroke-dasharray="76200,57150">
+								<use xlink:href="#mfid20" fill="none"/>
+								<!-- Unsupported Record: EmfPlusRecordTypeSetPixelOffsetMode  -->
+								<defs>
+									<path id="mfid22" d="M2,-4 L0,0 L-2,-4 Z"/>
+								</defs>
+								<defs>
+									<path id="mfid23" d="M0,0 L1,6300000"/>
+								</defs>
+							</g>
+						</g>
+						<g transform="matrix(0.00015748, 0, 0, -0.00015748, 491.5, 1004.6)">
+							<g fill="#000000"/>
+							<g fill="#f8cbad" stroke-width="19050" stroke="#000000" stroke-linecap="square"
+									marker-end="url(#mfid21)" stroke-miterlimit="8" stroke-dasharray="76200,57150">
+								<use xlink:href="#mfid23" fill="none"/>
+								<!-- Unsupported Record: EmfPlusRecordTypeSetPixelOffsetMode  -->
+							</g>
+						</g>
+					</g>
+					<!-- GetDC -->
+					<mask id="mfid24" fill-rule="evenodd" fill="white" stroke="none">
+						<rect x="0" y="0" width="1005" height="1005"/>
+					</mask>
+					<g mask="url(#mfid24)">
+						<g transform="matrix(1, 0, 0, 1, 333.46, 622.8)">
+							<g stroke="#000000" stroke-miterlimit="10" fill="none">
+								<g font-family="&#39;媅S&#39;" font-style="normal" font-weight="400" font-size="40">
+									<text stroke="none" fill="#000000" x="0,40,80,120" y="0" transform="translate(0,0)"
+											xml:space="preserve">正常域</text>
+								</g>
+							</g>
+						</g>
+					</g>
+					<!-- Released DC -->
+					<!-- Unsupported Record: EmfPlusRecordTypeSetPixelOffsetMode  -->
+					<!-- GetDC -->
+					<g mask="url(#mfid24)">
+						<g transform="matrix(1, 0, 0, 1, 612.47, 782.78)">
+							<g stroke="#000000" stroke-miterlimit="10" fill="none">
+								<g font-family="&#39;媅S&#39;" font-style="normal" font-weight="400" font-size="40">
+									<text stroke="none" fill="#000000" x="0,40,80,120" y="0" transform="translate(0,0)"
+											xml:space="preserve">脆弱域</text>
+								</g>
+							</g>
+						</g>
+					</g>
+					<!-- Released DC -->
+					<!-- Unsupported Record: EmfPlusRecordTypeSetPixelOffsetMode  -->
+					<!-- GetDC -->
+					<g mask="url(#mfid24)">
+						<g transform="matrix(1, 0, 0, 1, 630.04, 402.39)">
+							<g stroke="#000000" stroke-miterlimit="10" fill="none">
+								<g font-family="&#39;媅S&#39;" font-style="normal" font-weight="400" font-size="40">
+									<text stroke="none" fill="#000000" x="0,40,80,120,160" y="0" transform="translate(0,0)"
+											xml:space="preserve">可运行域</text>
+								</g>
+							</g>
+						</g>
+					</g>
+					<!-- Released DC -->
+					<!-- Unsupported Record: EmfPlusRecordTypeSetPixelOffsetMode  -->
+					<!-- GetDC -->
+					<g mask="url(#mfid24)">
+						<g transform="matrix(1, 0, 0, 1, 699, 178.59)">
+							<g stroke="#000000" stroke-miterlimit="10" fill="none">
+								<g font-family="&#39;媅S&#39;" font-style="normal" font-weight="400" font-size="40">
+									<text stroke="none" fill="#000000" x="0,40,80,120,160,200" y="0" transform="translate(0,0)"
+											xml:space="preserve">不可运行域</text>
+								</g>
+							</g>
+						</g>
+					</g>
+					<!-- Released DC -->
+				</svg>
+			</switch>
+			<rect v:rectContext="foreign" x="0" y="0.749987" width="435.798" height="434.806" class="st1"/>
+		</g>
+	</g>
+</svg>
