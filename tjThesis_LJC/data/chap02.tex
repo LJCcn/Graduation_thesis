@@ -80,12 +80,30 @@ $(3)$聚类系数：
 聚类系数是一个表征两个节点间连接紧密程度的特征参数。当节点$v_i$的节点度为$k_i$,那么相邻节点之间的边数最大为$\frac{k_i(k_i-1)}{2}$,假设节点$v_i$的$k_i$和邻居节点
 之间实际存在的边数为$E_i$,那么节点$v_i$的聚类系数定义为：$C_i=\frac{2E_i}{k_i(k_i-1)}$。网络的聚类系数为：
 
-\begin{equation}
+\begin{equation} 
     \label{equ:chap3:feature}
     C=\frac{1}{N} \sum_{i=1}^N C_i
 \end{equation}
 
 式中：$N$为网络节点数。
+
+$(4)$介数及介数分布
+
+网络中的不相邻节点$v_i$和$v_j$之间的最短路径会途经某些节点或边，如果某些节点$v$或边$e$被其他许多最短路径经过，则表示该节点对网络的贡献较大，重要性也越高。将节点介数
+$B(v)$和边介数$B(e)$分别定义为：
+
+\begin{equation} 
+    \label{equ:chap3:feature}
+    B(v)=\sum_{i \neq j\in V} \frac{\sigma_{ij}(v)}{\sigma_{ij}} 
+\end{equation}
+\begin{equation} 
+    \label{equ:chap3:feature}
+    B(e)=\sum_{i \neq j\in V} \frac{\sigma_{ij}(e)}{\sigma_{ij}} 
+\end{equation}
+
+式中：$\sigma_ij$是节点$v_i$和$v_j$间最短路径的数量，$\sigma_ij(v)$是节点$v_i$和$v_j$通过节点v的最短路径数量，$\sigma_ij(e)$是节点$v_i$和$v_j$通过支路e的最短路
+径数量。
+
 
 
 \section{复杂网络模型}
