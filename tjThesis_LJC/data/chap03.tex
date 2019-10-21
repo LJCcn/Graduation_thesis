@@ -284,9 +284,6 @@ PR(p_i)=\frac{1-q}{N}+q\sum\limits_{p_j\in\mathbf{M_{p_i}}}{\frac{PR(p_j)}{L(p_j
    {F=\left[\begin{array}{lll}{\varphi_{1},} & {\varphi_{2},} & {\varphi_{3} \cdots \varphi_{n}}\end{array}\right]}\end{array}\right.
   \end{equation}
 
-
-
-
 \subsection{蒙特卡洛方法概述}
 \label{sec:vulneStaus}
 
@@ -304,6 +301,89 @@ PR(p_i)=\frac{1-q}{N}+q\sum\limits_{p_j\in\mathbf{M_{p_i}}}{\frac{PR(p_j)}{L(p_j
 
 \subsection{状态脆弱性分析方法及指标研究}
 \label{sec:static}
+
+电网结构介绍，节点类型等
+
+分析方法：潮流计算
+
+在指标研究方面，拟采用裕度法和灵敏度法进行指标分析。
+
+灵敏度的物理意义为：控制量每变动一个单位引起的输出量的变化值。
+在电力系统中，灵敏度一般是指以输出或状态向量表征的系统运行状况对控制向量和扰动向量变化的敏感程度。
+
+在电力系统脆弱性研究中的灵敏度分析大部分是建立在潮流方程基础上的，不同学术文献中所用到方法的不同之处，除了在所提出的评价指标的差别外，还体现在潮流计算中对所用变量
+的分类和其相互关系的处理上。
+基于潮流计算的灵敏度分析的基本方程是节点功率平衡方程，其极坐标形式如下：
+\begin{equation}
+  \left\{\begin{array}{l}{P_{i}=U_{i} \sum_{j=1}^{n} U_{j}\left(G_{i j} \cos \theta_{i j}+B_{i j} \sin \theta_{i j}\right)} \\ 
+{Q_{i}=U_{i} \sum_{j=1}^{n} U_{j}\left(G_{i j} \sin \theta_{i j}-B_{i j} \cos \theta_{i j}\right)}\end{array}\right.  
+\end{equation}
+
+在灵敏度分析中，按照各变量的数学作用，可将变量分为如下四类：
+
+$(1)$独立参数向量$\alpha$：包括线路导纳参数$G$,$B$等常量；
+
+$(2)$状态参数向量：$S=\left[U_{l}, \theta_{l}, Q_{g}, \theta_{g}, P_{0}, Q_{0}\right]^{T}$，（潮流计算待求量）包括负荷节点的电压、相位；发电节点的无功功率、相位，
+平衡节点的有功功率、无功功率；
+
+$(3)$控制参数向量：$C=\left[P_{l}, Q_{l}, P_{g}, V_{g}, \theta_{0}, U_{0}, B, G \cdots\right]^{T}$（电网模型数据给定（输入）量）包括负荷节点的有功功率和无功功率，
+发电节点的有功功率和电压幅值，平衡节点的相角和电压幅值，以及电网支路的导纳和电纳参数等；
+
+$(4)$输出参数向量：$Y=\left[Q_{g}, P_{0}, Q_{0}, P_{L O S S}, Q_{L O S S} \cdots\right]^{T}$，（潮流计算输出量计算结果）包括平衡节点的有功功率和无功功率，以及电网
+的有功损耗和无功损耗等。
+
+下标$l$，$g$和$0$表示所对应的量为$PQ$节点，$PV$节点和平衡节点。
+
+在电网指标的研究中，状态参数向量也可以归为输出参数向量中，作为状态脆弱性指标研究的重要参考。
+
+按照以上变量的划分，灵敏度分析的数学方程可以表示为：
+\begin{equation}
+\left\{\begin{array}{l}{F(S, C, \alpha)=0} \\ {Y=G(S, C, \alpha)}\end{array}\right.
+\end{equation}
+
+在上式中，定义$F(S, C, \alpha)=0$为状态方程，包括电力系统中各节点的功率平衡方程，与式3.9等价；定义$Y=G(S, C, \alpha)$为输出方程，包含$PV$节点的无功功率方程、网损方程、
+平衡节点方程、支路潮流方程等输出方程。
+
+由于电力系统网络的复杂性，以及潮流状态方程为非线性方程，因而只能用迭代方法求其数值解，所以本文在灵敏度研究分析上，采用简便灵敏度分析方法，简化灵敏度分析过程，忽略潮流方程
+变量之间的相互关系，借助牛顿潮流计算方法对其进行迭代求解。在状态方程和输出方程中对控制向量$U$求全微分：
+\begin{equation}
+  \frac{\partial F}{\partial S} \cdot \frac{d S}{d C}+\frac{\partial F}{\partial C}=0
+  \end{equation}
+\begin{equation}
+  \frac{d Y}{d C}=\frac{\partial G}{\partial S} \cdot \frac{d S}{d C}+\frac{\partial G}{\partial C}
+  \end{equation}
+
+从式$3.11$中，可得到状态参数的灵敏度表达式：
+\begin{equation}
+  \frac{d S}{d C}=-\left(\frac{\partial F}{\partial S}\right)^{-1} \frac{\partial F}{\partial C}
+  \end{equation}
+  
+将式$3.13$代入式$3.12$可得到输出参数的灵敏度表达式：
+\begin{equation}
+  \frac{d Y}{d C}=-\frac{\partial G}{\partial S}\left(\frac{\partial F}{\partial S}\right)^{-1} \frac{\partial F}{\partial C}+\frac{\partial G}{\partial C}
+  \end{equation}
+
+从以上的状态方程和输出方程可以看出，灵敏度指标从不同的变量来考虑可以构造出不同的灵敏度指标。
+
+
+
+
+
+
+
+电压稳定裕度：
+
+通过比较节点实际的运行电压和临界电压之间的裕度的临界电压指标来评估负荷节点功率变化下电网各节点的状态脆弱性。简言之，电压稳定裕度就是当前运行电压到临界电压的距离，距离越大说明稳定裕度越大。
+
+定义“电压裕度”指标如下：
+
+\begin{equation}
+  S_v=\frac{U_{C}-U_{I}}{\left|\alpha U_{m}\right|}
+  \end{equation}
+
+其中，$U_C$为电压临界值，$U_I$为当前运行电压值，$\left|\alpha U_{m}\right|$为电压稳定阈值，$\alpha$为电压最大允许的波动率（偏差率）。$U_m$为负荷节点额定电压值。
+
+
 
 
 
