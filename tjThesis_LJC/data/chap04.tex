@@ -228,6 +228,21 @@ $(3)$电网损耗灵敏度指标：描述的是系统各节点分别在负荷变
 具体映射：在电力系统结构脆弱性评估中，评价对象$M=39$，即1--39节点，评价指标$N=3$，分别为电气度、电气介数和PageRank值，将每个评价指标的数值在评价指标数值总和下所占的比例作为
 其所发生的概率$p_{mn}$。
 
+\begin{table}[htb]
+  \centering
+  \caption{熵权法与电力系统参数映射关系}
+  \label{tab:lichaTable1}
+    \begin{tabular}{C{5.5cm}C{5.5cm}}
+      \toprule
+      熵权法参数 & 电力系统参数 \\
+      \midrule
+      评价对象 &  系统节点 \\
+      评价指标 &  结构脆弱性指标 \\
+      评价对象概率值 & 节点的指标值占指标总和的比重 \\
+      \bottomrule
+    \end{tabular}
+\end{table}
+
 熵权法的计算流程如图\ref{fig:shang_Procession}所示：
 \begin{figure}[H] % use float package if you want it here
   \centering
@@ -338,14 +353,15 @@ C = \left[\begin{array}{cccc}{w_{1} z_{11}} & {w_{2} z_{12}} & {\cdots} & {w_{n}
   \bar{w_{j}}=\frac{\sum_{k=1}^{m} \sum_{k=1}^{m}\left|z_{i j}-z_{i j}\right|}{\sum_{j=1}^{n}\sum_{i=1}^{m} \sum_{k=1}^{m} | z_{ij}-z_{k j}|}, j=1,2 \cdots n
   \end{equation}
 
-本文在运用离差最大化进行状态脆弱性指标融合时，方案集$A_i$对应系统节点名称，属性集$G_j$对应状态脆弱性指标集，方案的属性值对应为系统节点的指标值。
+本文在运用离差最大化进行状态脆弱性指标融合时，方案集$A_i$对应系统节点名称，属性集$G_j$对应状态脆弱性指标集，方案的属性值对应为系统节点的指标值。其映射关系如表\ref{tab:lichaTable1}
+所示：
 \begin{table}[htb]
   \centering
-  \caption{多属性决策与电力系统指标权重分配模型映射关系}
-  \label{tab:PRComparision}
+  \caption{多属性决策与电力系统参数映射关系}
+  \label{tab:lichaTable1}
     \begin{tabular}{C{4.5cm}C{4.5cm}}
       \toprule
-      多属性决策 & 电力系统 \\
+      多属性决策参数 & 电力系统参数 \\
       \midrule
       方案集 & 系统节点集 \\
       属性集 & 状态脆弱性指标集 \\
@@ -372,28 +388,178 @@ C = \left[\begin{array}{cccc}{w_{1} z_{11}} & {w_{2} z_{12}} & {\cdots} & {w_{n}
 \subsection{脆弱性量化评估二级指标融合}
 \label{sec:2ndIndexMerge}
 
+通过第三章对电力系统脆弱性指标的研究和计算，得到脆弱性指标值后，运用$Matlab$工具实现对结构脆弱性指标和状态脆弱性指标的权重分配，其权重分配结果汇总如下：
+\begin{table}[htb]
+  \centering
+  \caption{二级指标权重分配结果}
+  \label{tab:quanzhong3}
+    \begin{tabular}{C{3.5cm}C{3.5cm}C{3.5cm}}
+      \toprule
+      指标类型 & 指标名称 & 权重系数 \\
+      \midrule
+                    & 电气度  &  0.33 \\
+      结构脆弱性指标 & 电气介数 & 0.41 \\
+                    & PageRank值 & 0.26 \\
+                    & 电压裕度  &  0.29 \\
+      状态脆弱性指标 & 功率稳定裕度 & 0.34 \\
+                    & 电网损耗灵敏度 & 0.37 \\ 
+      \bottomrule
+    \end{tabular}
+\end{table}
 
+\begin{figure}[H] % use float package if you want it here
+  \centering
+  \includegraphics[width=14cm,height=7cm]{quanzhong.pdf}
+  \caption{系统二级脆弱性指标权重图}
+  \label{fig:quanzhong}
+\end{figure}
 
+从图\ref{fig:quanzhong}中可以看出，对于结构脆弱性指标而言，指标二电气介数对于电力系统脆弱性评价影响最大，因为该指标在进行节点重要性分析时，不仅考虑到系统节点在拓扑中的重要性
+还考虑到潮流能量分布对结构的影响程度，所以从改进的熵权法的权重结果上，电气介数在脆弱性评估上赋予较大的权重是合理的。对于状态脆弱性指标而言，各指标的权重分配结果差别不大，其中
+指标二功率稳定裕度和指标三电网损耗灵敏度所占权重较大，而指标一电压稳定裕度权重最小，其原因在于电力系统各节点的差异性，在指标二和指标三中，两个指标都是各自节点参数的改变来确定各
+节点的指标值，如电网损耗灵敏度指标，该指标是通过增加某节点的有功功率经潮流计算得到电网损耗值。指标一不同的是，该指标是运用蒙特卡洛模拟实际电网负荷变化，来计算节点电压的平均电压裕度，
+加之电网电压在实际负荷变化情况下，其本身的稳定性较强，电压值变化幅度较小，导致各节点的指标值离散程度较小，所以该指标在最大离差化法的权重计算结果中，所占的权重最小。
+
+因此，本文由权重分配结果对结构和状态的各脆弱性指标进行融合，其表达式如下：
+\begin{equation}
+\begin{aligned} V_{1} &=I_{1} \cdot W_1^{T} \\ &=\left[\begin{array}{lll}{I_{11}^{*}} & {I_{12}^{*}} & {I_{13}^{*}}\end{array}\right] \cdot\left[\begin{array}{lll}{w_{1}} & {w_{2}} & {w_{3}}\end{array}\right]^{T}, V_{1} \in[0,1] \end{aligned}
+\end{equation}
+\begin{equation}
+\begin{aligned} V_{2} &=I_{1} \cdot W_2^{T} \\ &=\left[\begin{array}{lll}{I_{21}^{*}} & {I_{22}^{*}} & {I_{23}^{*}}\end{array}\right] \cdot\left[\begin{array}{lll}{w_{1}} & {w_{2}} & {w_{3}}\end{array}\right]^{T}, V_{2} \in[0,1] \end{aligned}
+\end{equation}
 
 
 \section{脆弱性量化评估一级指标融合}
-经过上节的研究分析得到了结构和状态两个独立的评判指标，将这两个一级指标进行融合是本节研究的重点，考虑到结构和状态指标之间的独立性，本节基于$D--S$证据理论，
-对一级指标进行融合，最终得到一个$0--1$范围内的系统脆弱性综合评价结果。
+经过上节的研究分析得到了结构和状态两个独立的评判指标$V_1$和$V_2$，将这两个一级指标进行融合是本节研究的重点，本文用概率统计的方法对系统的脆弱程度进行评估，也就是将系统的脆弱性事件分为两类：
+脆弱和非脆弱，考虑到事件和一级指标间的独立性，本节基于D-S证据理论，对一级指标进行融合，最终得到一个$0-1$范围内的系统脆弱性综合评价结果。
 
-
-
-\subsection{$D-S$证据理论}
+\subsection{D-S证据理论}
 \label{sec:DStheory}
+D-S证据理论是最早由Dempster提出，后由Shafter进行补充的用于处理不确定性问题的完整理论。其原理是Dempster通过定义命题的不确定性，提出集值映射和上、下限概率的概念，然后给出Dempster法则
+作为证据融合规则，最后Shafer引入信任函数重新定义上、下限概率，得出具有普适性的D-S证据理论。D-S证据理论的特点：由贝叶斯理论发展而来，但约束条件比贝叶斯概率理论更弱；采用“区间估计”而非
+“点估计”来描述事件的不确定性；不仅能够强调事物的客观性，还能强调人类对事物估计的主观性\cite{refs79}。
 
+\begin{definition}
+辨识框架(Frame of Discernment)
+\end{definition}
+设$\Theta=\left\{\theta_{1}, \theta_{2}, \ldots, \theta_{n}\right\}$，若非空集合$\Theta$是由$n$个互不相容的元素组成，那么称$\Theta$是辨识框架。
 
+在D-S证据理论中，辨识框架表示关于命题的彼此独立的所有答案或假设的有限集合\cite{refs80}。$2^\Theta$是$\Theta$的幂集，表示辨识框架的所有子集（包含空集），
+即$2^{\Theta}=\left\{\phi,\left\{\theta_{1}\right\},\left\{\theta_{2}\right\}, \ldots,\left\{\theta_{n}\right\},\left\{\theta_{1}, \theta_{2}\right\},\left\{\theta_{1}, \theta_{3}\right\}, \ldots, \Theta\right\}$。
 
+\begin{definition}
+基本概率赋值函数(Basic Probability Assignment)
+\end{definition}
+设$\Theta$为一识别框架，$A$是$\Theta$上的任意子集，若函数$m$:$2^{\Theta} \rightarrow[0,1]$，满足条件
+\begin{equation}
+\left\{\begin{array}{l}{m(\emptyset)=0} \\ {\sum_{A \subset \Theta} m(A)=1} \\ {m(A)>0}\end{array}\right.
+\end{equation}
 
+称函数$m$是$2^\Theta$上的概率赋值函数。$\forall A \subset \Theta$，$m(A)$为$A$的基本信任值，表示该条证据对命题$A$的支持程度，$m(A)$仅表示对$A$的信任，不反映对其他任何子集的支持度。
+其中，使得$m(A)>0$的$A$称为焦元。
+\begin{definition}
+置信函数(Belief Function)和似真函数（Plausibility Function）
+\end{definition}
+\begin{equation}
+  \operatorname{Bel}(A)=\sum_{B \subseteq A} m(B), \forall A \subseteq \Theta
+\end{equation}
+\begin{equation}
+  \operatorname{Pl}(A)=\sum_{B \cap A \neq \varnothing} m(B)
+\end{equation}
+
+上式中，$B$为$A$的子集，函数$Bel$是$\Theta$上的置信函数。对于任一$A \subset \Theta$，$Bel(A)$是对$A$的置信度，表示$A$发生的可能性；函数$Pl$是辨识框架$\Theta$上的似真函数。
+对于任一$A \subset \Theta$，$Pl(A)$是对$A$的似真度,表示$A$可能为真的不确定度量。在证据理论中，通常用$\left[Bel(A),Pl(A)\right]$来表示证据对$A$的信任区间。D-S证据理论对于事件A的
+不确定性描述如图\ref{fig:undefined}所示。
+\begin{figure}[H] % use float package if you want it here
+  \centering
+  \includegraphics[]{undefined.pdf}
+  \caption{对事件A的不确定性描述}
+  \label{fig:undefined}
+\end{figure}
+\begin{table}[htb]
+  \centering
+  \caption{对命题A各区间的解释}
+  \label{tab:undefined}
+    \begin{tabular}{C{4.5cm}C{4.5cm}}
+      \toprule
+      $\left[Bel(A),Pl(A)\right]$ & 解释描述 \\
+      \midrule
+      $\left[0,1\right]$ & 对命题A完全不确定 \\
+      $\left[0.7,0.7\right]$ & 命题A为真的准确概率为0.6 \\
+      $\left[0,0\right]$ & 命题A完全为假 \\
+      $\left[1,1\right]$ & 命题A完全为真 \\
+      $\left[0.4,0.6\right]$ & 命题A为真的概率在0.4和0.6之间 \\
+      \bottomrule
+    \end{tabular}
+\end{table}
+
+在证据理论的合成规则上，假设$m_1,m_2,\cdots,m_k$分别是同一识别框架$\Theta$上的$k$个基本概率赋值函数，对应的焦元分别为$A_i(i=1,2,\cdots,k)$，设
+$K=\sum_{A_{1} \cap \cdots \cap A_{k} = \varnothing } m_{1}\left(A_{1}\right) m_{2}\left(A_{2}\right) \cdots m_{k}\left(A_{k}\right)<1$，若映射$m$:
+$2^ \Theta \rightarrow \left[0,1\right]$,则$k$条证据的合成规则为：
+\begin{equation}
+\label{equ:chap4:rules}
+m(A)=\left\{\begin{array}{ll}{0} & {A=\Theta} \\ {\frac{\sum_{A_{1} \cap A_{2} \cap \cdots \cap A_{k}=A} m_{1}\left(A_{1}\right) m_{2}\left(A_{2}\right) \cdots m_{k}\left(A_{k}\right)}{1-K}} & {A \neq \Theta}\end{array}\right.
+\end{equation}
+
+式\ref{equ:chap4:rules}中，$K$表示证据间的冲突系数，表示证据间的冲突系数。
+
+式\ref{equ:chap4:rules}融合公式需要满足两个条件\cite{refs81}：
+\begin{itemize}
+  \item 各证据间互不影响，数据信息相互独立。
+  \item 辨识框架中各事件具有互斥性和完备性。 
+\end{itemize}
+
+通过研究可以得出，D-S证据理论中不确定性推理流程为：
+
+$(1)$建立辨识框架$\Theta$，确定命题的完备集，生成基本概率赋值函数（BPA）；
+
+$(2)$对各证据进行组合，对加入的证据进行概率更新，计算冲突系数$K$；
+
+$(3)$确定计算事件的$Bel$和$Pl$,得到事件置信区间；
+
+$(4)$根据Dempster证据组合规则，计算确定事件的BPA函数；
+
+$(5)$将BPA函数的可信度转换为概率，对融合结果做出决策。
 
 \subsection{脆弱性量化评估一级指标融合}
 \label{sec:DSdistri}
+在本文中，电力系统脆弱性分结构和状态两方面进行研究，通过客观赋权融合方法分别得到结构指标$V_1$和状态指标$V_2$，这两个指标分别从两个完全不同的方面对系统脆弱性问题展开分析的，
+因此，可将这两个一级指标视为两条独立的证据，它们分别从不同方面对系统脆弱性这一不确定性事件进行描述评估。鉴于D-S证据理论是用于处理不确定性问题的完备理论，所以对于电力系统脆弱性
+的综合评价问题满足D-S证据理论的约束条件。
 
+由上述分析可知，电力系统脆弱性辨识框架由两个事件构成完备事件集：脆弱和非脆弱。结构脆弱性指标和状态脆弱性指标可作为指向系统脆弱性的两条独立的证据，其中概率赋值函数（BPA）可用指标概率值$P$
+表示：
+\begin{equation}
+\left\{\begin{array}{l}{ V_1 = P_1 \times 100\%} \\ {V_2 = P_2 \times 100\%}\end{array}\right.
+\end{equation}
 
+式中指标概率值$P_1,P_2 \rightarrow \left[0,1\right]$。
 
+电力系统脆弱性辨识框架可定义为：
+\begin{equation}
+  \Theta = \left\{V_{vulnerable},V_{unvulnerable}\right\}
+\end{equation}
+
+各证据的基本概率赋值函数（BPA）可定义为：
+\begin{equation}
+\left\{\begin{array}{l}{m_1(\left\{V_{vulnerable}\right\},\left\{V_{unvulnerable}\right\}) = (V_{1} , 1-V_{1})} \\ 
+{m_2(\left\{V_{vulnerable}\right\},\left\{V_{unvulnerable}\right\}) = (V_{2} , 1-V_{2})}\end{array}\right.
+\end{equation}
+
+根据D-S证据理论的合成规则,即式\ref{equ:chap4:rules}，可得到两指标证据下脆弱事件的BPA值，本文将其定义为脆弱性综合评价指数$E_{vul}$:
+\begin{equation}
+\label{equ:chap4:vulnerable}
+\begin{aligned} E_{vul} &=m(vulnerable) \\ 
+ &=\frac{\sum_{X \cap Y=\{\text {vulnerable}\}} m_{1}(X) m_{2}(Y)}{\sum_{X \cap Y \neq \varnothing} m_{1}(X) m_{2}(Y)} \\
+ &=\frac{V_{1} \times V_{2}}{V_{1} \times V_{2}+\left(1-V_{1}\right) \times\left(1-V_{2}\right)} \end{aligned}
+\end{equation}
+
+式\ref{equ:chap4:vulnerable}中，两条指标证据对应的概率赋值函数分别为$m_1(X)$和$m_2(Y)$，其子集均为$\left\{V_{vulnerable},V_{unvulnerable} \right\}$，$E_{vul}$由系统结构和状态两方面
+指标得出，可综合评价电力系统各节点的脆弱程度，脆弱性综合评价指数$E_{vul}$越大，表示节点在系统中的脆弱程度越高，系统越差。
+
+对于脆弱性的不确定性描述问题，在辨识框架中，脆弱（vulnerable）和非脆弱（unvulnerable）构成完备事件集，两指标证据的识别框架完全相同，$X$和$Y$的子集结构也完全相同，因此，证据的
+置信函数（Bel）值和似真函数（Pl）值相等，满足表\ref{tab:undefined}中第二种不确定区间的解释。因此，从基本概率赋值函数（BPA）、置信函数（Bel）和似真函数（Pl）三方面衡量对脆弱事件
+（vulnerable）的信任程度相同。
 
 
 
