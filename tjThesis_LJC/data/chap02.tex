@@ -109,9 +109,10 @@ $B(v)$和边介数$B(e)$分别定义为：
 
 \subsection{小世界模型}
 \label{sec:windEffects}
-在复杂网络理论中，将现实中的复杂网络抽象成节点和边，比如人脉、互联网和电网。Watts和Strogatz将这类具有高聚集程度、小平均距离的网络称为小世界网络\cite{refsWS}。提出小世界模型
+在复杂网络理论中，将现实中的复杂网络抽象成节点和边，比如人脉、互联网和电网。Watts和Strogatz将具有高聚集程度、小平均距离的这一类网络称为小世界网络\cite{refsWS}。提出小世界模型
 （WS模型）。其构造过程为：首先构造一个最近邻连接的规则网络，然后以概率$p$随机断开网络上的一条边后重新连接边。当$p$为0时，网络为规则网络，当$p$为1时，网络为随机网络。当$0<p<1$
-时，网络为小世界网络。当重连概率$p$介于0—1变化时，网络模型的聚类系数和平均距离也在发生变化，其演变过程如图\ref{fig:SW}所示。
+时，网络为小世界网络。当重连概率$p$介于0—1变化时，网络模型的聚类系数和平均距离也在发生变化，其演变过程如图\ref{fig:SW}所示。因小世界网络具有聚集系数高、平均距离小的特征，所以
+小世界网络体现出少数随机连接的重要作用。
 \begin{figure}[H] % use float package if you want it here
     \centering
     \includegraphics[width=14cm,height=6.5cm]{SW_network.png}
@@ -119,6 +120,88 @@ $B(v)$和边介数$B(e)$分别定义为：
     \label{fig:SW}
   \end{figure}
 
+下面进行算例分析，取节点数$N = 1000$，初始网络规则的度$K = 6$，重连概率$p$从0-1依此增加，验证聚类系数$C$和平均距离$L$的变化过程。其验证结果如图\ref{fig:CL}所示。
+\begin{figure}[H] % use float package if you want it here
+    \centering
+    \includegraphics[]{CL.pdf}
+    \caption{各重连概率$p$值下聚类系数$C$和平均路径长度$L$的变化趋势}
+    \label{fig:CL}
+\end{figure}
+
+从图\ref{fig:CL}可以看出，随着重连概率$p$的增加，规则网络经历了从小世界网络到随机网络演变的过程，小世界网络相比于随机网络具有高聚集系数的特征，而相比于规则网络又具有
+小平均距离的特征。其表达式如下：
+\begin{equation}
+\label{equ:chap2:CL}
+ C\gg C_{random} \quad \quad\quad L \ll L_{regular}
+\end{equation}
+
+小世界网络模型在具体网络的应用方面具有很重要的现实意义。在网络动力学原理中，一般的网络当节点出现故障时，其影响范围很小。而在小世界网络中，由于节点间存在长程连接，节点故障
+可能会快速传播到网络其他区域，进而引起网络的连锁故障。小世界网络的特征路径长度和聚类系数与故障传播的深度和广度由密切关系。一般地，特征路径路径长度越小，则故障传播就越深；
+聚类系数越大，故障传播就越广\cite{refsWS1}。
+
+为验证电力系统网络具有小世界特性，下面通过MATLAB工具分别利用$IEEE$30、$IEEE$39和$IEEE$57标准算例模型进行验证，并与相同节点数的规则网络和
+随机网络进行对比分析。$IEEE$30、$IEEE$39和$IEEE$57标准算例模型的边数分别为41、46、81。规则网络采用的是最近邻耦合网络，所有的节点只与其最近的$K$个邻居节点相连，因此令规则网络
+的边数约等于标准电网模型的边数，$K=2$。并在此规则网络上构建随机网络，重连概率$p$为$0$，取1000次仿真计算结果的平均值为最终值，其仿真结果如表\ref{tab:ieee,tab:regular,tab:random}所示。
+\begin{table}[htb]
+    \centering
+    \caption{$IEEE$标准算例特征参数计算结果}
+    \label{tab:ieee}
+      \begin{tabular}{C{3cm}C{3cm}C{3cm}C{3cm}}
+        \toprule
+        $IEEE$标准算例      & $IEEE$30节点 & $IEEE$39节点 & $IEEE$57节点\\
+        \midrule
+        聚类系数($C$)       & 0.2348       & 0.0385      & 0.1222 \\
+        平均路径长度($L$)   & 3.3057       & 4.7490      & 4.9536 \\
+        \bottomrule
+      \end{tabular}
+  \end{table}
+
+\begin{table}[htb]
+    \centering
+    \caption{规则网络特征参数计算结果}
+    \label{tab:regular}
+      \begin{tabular}{C{3cm}C{3cm}C{3cm}C{3cm}}
+        \toprule
+        规则网络            & 30节点        & 39节点      & 57节点\\
+        \midrule
+        聚类系数($C$)       & 0             & 0           & 0 \\
+        平均路径长度($L$)   & 10.3333       & 13.3333      & 19.3333  \\
+        \bottomrule
+      \end{tabular}
+\end{table}
+
+\begin{table}[htb]
+    \centering
+    \caption{随机网络特征参数计算结果}
+    \label{tab:random}
+      \begin{tabular}{C{3cm}C{3cm}C{3cm}C{3cm}}
+        \toprule
+        随机网络            & 30节点        & 39节点      & 57节点\\
+        \midrule
+        聚类系数($C$)       & 0.0389       & 0.0275       &  0.0208 \\
+        平均路径长度($L$)   & 7.6711        & 8.5568        & 9.1382  \\
+        \bottomrule
+      \end{tabular}
+\end{table}
+
+为了直观显示，规则网络、$IEEE$标准电网和随机网络聚类系数和平均路径长度的对比值如图\ref{fig:Cluster,fig:L_mean}所示。
+\begin{figure}[H] % use float package if you want it here
+    \centering
+    \includegraphics[width=10cm,height=5cm]{Cluster.pdf}
+    \caption{规则网络、电网和随机网络的聚类系数结果图}
+    \label{fig:Cluster}
+\end{figure}
+
+\begin{figure}[H] % use float package if you want it here
+    \centering
+    \includegraphics[width=10cm,height=5cm]{L_mean.pdf}
+    \caption{规则网络、电网和随机网络的平均路径长度结果图}
+    \label{fig:L_mean}
+\end{figure}
+
+从表\ref{tab:regular}可以看出，在规则网络中，节点30、39、57网络的聚类系数均为0，这是由于每个节点的度数都为 2，因此该规则网络中任意节点的邻居节点都互相不连接，故聚类系数为0。
+从图\ref{fig:Cluster,fig:L_mean}验证了式\ref{equ:chap2:CL}的正确性，实际电网系统的聚类系数远大于随机网络的聚类系数，其平均路径长度远小于规则网络的路径长度，换句话说，电力系统网络
+相比于随机网络具有高聚集系数的特征，而相比于规则网络又具有小平均距离的特征，因此，验证得到电网模型为小世界网络，具有小世界性。这对于研究电网的结构脆弱性具有重要的应用意义。
 
 
 
