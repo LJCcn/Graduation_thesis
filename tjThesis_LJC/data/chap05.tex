@@ -143,8 +143,9 @@ $(3)$对比三种蓄意攻击策略，从图\ref{fig:chap5:Efficiency118}得到�
 下降为$11.71\%$、$13.26\%$、$7.06\%$，在后期的移除过程中，$PageRank$值攻击策略的破坏性更高，原因在于，$PageRank$值指标关注的是潮流流向对于电网结构的重要性，指向节点的潮流数越多意味着
 此节点的重要性越高，按照此攻击策略进行移除，将会导致发电节点所传输的功率所供给的节点越来越少，传输效率下降，直至无法进行功率传输。
 
-综上分析，电气度、电气介数和$PageRank$的攻击策略相较于随机攻击策略的破坏性较大，从而验证了这三种指标可作为脆弱性指标的合理性。通过三种蓄意攻击策略的对比，可得到电气度专注于电网结构拓扑的
-重要性，PageRank值则侧重于节点入链数的重要性，而电气介数综合考虑节点支路和支路潮流对电网结构的影响程度，其对电网的破坏性较为均衡。
+综上分析，电气度、电气介数和$PageRank$的攻击策略相较于随机攻击策略的破坏性较大，指标值较大的节点在遭到破坏时，电网结构受影响程度较大，从而验证了这三种指标可作为脆弱性指标的合理性。
+通过三种蓄意攻击策略的对比，可得到电气度专注于电网结构拓扑的重要性，PageRank值则侧重于节点入链数的重要性，而电气介数综合考虑节点支路和支路潮流对电网结构的影响程度，其攻击策略对电网的破坏性
+较为均衡。
 
 
 \section{电力系统脆弱性分析评估}
@@ -179,7 +180,7 @@ $(3)$对比三种蓄意攻击策略，从图\ref{fig:chap5:Efficiency118}得到�
 并融合得到结构综合脆弱性指标。如表~\ref{tab:chap5:Index_frabric39}~和图~\ref{fig:stric_3index}~所示。
 \begin{table}[H]
   \centering
-  \caption{IEEE39~系统结构脆弱性指标}
+  \caption{$IEEE39$系统结构脆弱性指标}
   \label{tab:chap5:Index_frabric39}
   \begin{tabular}{C{1.5cm}C{2.05cm}C{2.5cm}C{2.85cm}C{3.5cm}}
   \toprule
@@ -245,7 +246,7 @@ $(3)$对比三种蓄意攻击策略，从图\ref{fig:chap5:Efficiency118}得到�
 \begin{figure}[H] % use float package if you want it here
   \centering
   \includegraphics[width=14cm,height=8.64cm]{stric_39.pdf}
-  \caption{IEEE39节点结构综合脆弱性指标}
+  \caption{$IEEE39$节点结构综合脆弱性指标}
   \label{fig:stric_39}
 \end{figure}
 
@@ -268,7 +269,7 @@ $(3)$对比三种蓄意攻击策略，从图\ref{fig:chap5:Efficiency118}得到�
 
 \begin{table}[H]
   \centering
-  \caption{IEEE39~系统状态脆弱性指标}
+  \caption{$IEEE39$系统状态脆弱性指标}
   \label{tab:chap5:Index2_frabric39}
   \begin{tabular}{C{1.5cm}C{2.5cm}C{2.5cm}C{2.75cm}C{2.75cm}}
   \toprule
@@ -407,13 +408,13 @@ $(5)$如果新计算出来的质心和原来的质心之间的距离小于某一
   \centering
   \caption{$IEEE39$系统脆弱性指标值聚类结果表}
   \label{tab:k_means}
-  \begin{tabular}{C{1.5cm}C{2.5cm}C{8cm}}
+  \begin{tabular}{C{1.5cm}C{2.25cm}C{1.5cm}C{7.25cm}}
   \toprule
-  \textbf{所属类别} & \textbf{节点颜色} & \textbf{节点名称}  \\
+  \textbf{所属类别} & \textbf{质心坐标} & \textbf{节点颜色} & \textbf{节点名称}  \\
   \midrule
-  0 & 绿色 & 1、7、9、12、15、18、24、26、27、28  \\
-  1 & 红色 & 2、5、6、8、10、11、13、14、17、19、20、22 \\ 
-  2 & 蓝色 & 3、4、16、21、23、25、29 \\ 
+  0             &(0.5\ ,\ 0.246)       & 绿色        & 1、7、9、12、15、18、24、26、27、28  \\
+  1             &(0.201\ ,\ 0.415)     & 红色        & 2、5、6、8、10、11、13、14、17、19、20、22 \\ 
+  2             &(0.513\ ,\ 0.553)     & 蓝色        & 3、4、16、21、23、25、29 \\ 
   \bottomrule
   \end{tabular}
 \end{table}

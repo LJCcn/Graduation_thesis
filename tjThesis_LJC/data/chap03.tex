@@ -281,12 +281,16 @@ PR(p_i)=\frac{1-q}{N}+q\sum\limits_{p_j\in\mathbf{M_{p_i}}}{\frac{PR(p_j)}{L(p_j
   \label{fig:fundement14}
 \end{figure}
 
-针对该拓扑，复杂网络的建模将其等效为一个无向图如图\ref{fig:model1}，图中按照支路电气介数的大小等比例加粗了图的边，再根据图中的流程\ref{fig:nodeBetweenPro}最终计算得到各个节点的电气介数。电气介数计算的过程中，节点的电气介数直接受支路的电气介数影响。而支路的电气介数计算突出的是支路结构对能量分布的影响，能量分布越大的支路其电气介数也相应的越高。而$PangRank$的建模则将其等效为一个有向图如图\ref{fig:model2}，再根据图\ref{fig:PRPro}最终计算得到各个节点的$PR$值。$PangRank$计算的过程中，突出的是拓扑的出入链的重要性。对于该模型，其迭代过程在能量转移矩阵的作用下完成，而入链累计度越高的点的$PangRank$越高。$PangRank$衡量了拓扑节点在能量转移中所起的作用。
+针对$IEEE39$系统拓扑，复杂网络的建模将其等效为一个无向图如图\ref{fig:model1}，在电气度的计算过程中，图\ref{fig:model1}按照支路上的视在功率大小等比例加粗图中的边；在电气介数的计算过程中，
+图\ref{fig:model1}按照支路电气介数的大小等比例加粗了图的边，再根据图中的流程\ref{fig:nodeBetweenPro}最终计算得到各个节点的电气介数。节点的电气介数直接受支路的电气介数影响。
+而支路的电气介数计算突出的是支路结构对能量分布的影响，能量分布越大的支路其电气介数也相应的越高。而$PangRank$的建模则将其等效为一个有向图如图\ref{fig:model2}，再根据图\ref{fig:PRPro}
+最终计算得到各个节点的$PR$值。$PangRank$计算的过程中，突出的是拓扑的出入链的重要性。对于该模型，其迭代过程在能量转移矩阵的作用下完成，而入链累计度越高的点的$PangRank$越高。
+$PangRank$衡量了拓扑节点在能量转移中所起的作用。
 \begin{figure}[H]
 \begin{minipage}{0.48\textwidth}
   \centering
   \includegraphics[height=5.8cm]{graph14.pdf}
-  \caption{基于复杂网络的拓扑建模}
+  \caption{基于传统复杂网络的拓扑建模}
   \label{fig:model1}
 \end{minipage}\hfill
 \begin{minipage}{0.48\textwidth}
