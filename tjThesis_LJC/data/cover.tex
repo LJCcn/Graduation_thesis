@@ -55,8 +55,8 @@
   
   % 本文研究了复杂网络特征参数和网络模型，以$IEEE$30、39、57标准模型为例，验证分析了电力系统的小世界性和无标度性。通过研究复杂网络脆弱性得出电力系统存在脆弱环节，明确了本文研究的关键问题。
   
-  本文结合复杂网络脆弱性理论和电力系统脆弱性特征，以$IEEE$30、39、57标准模型为例，分析了电力系统的小世界性和无标度性，明确了本文研究的关键问题，提出了电力系统脆弱性的定义并分析，
-  从结构和状态两个方面进行脆弱性模型研究，在结构方面，基于复杂网络理论建立电网拓扑模型，提出结构脆弱性指标，建立了电网结构脆弱性模型；在状态方面，从节点电压稳定性、过负荷能力和
+  本文以$IEEE$30、39、57标准模型为例，结合复杂网络脆弱性理论，分析了电力系统的小世界性和无标度性，明确了本文研究的关键问题，结合电力系统脆弱性特征，提出了电力系统脆弱性的定义，
+  从结构和状态两个方面进行脆弱性模型研究和案例分析，在结构方面，基于复杂网络理论所建立的电网拓扑模型，提出结构脆弱性指标，建立了电网结构脆弱性模型；在状态方面，从节点电压稳定性、过负荷能力和
   电网损耗方面提出状态脆弱性指标，结合电力系统负荷概率模型，通过蒙特卡洛方法对状态脆弱性指标进行计算分析，建立了电网状态脆弱性模型。
   
   针对电网脆弱性综合量化评估问题，本文构建了电力系统脆弱性指标评估体系，选取并分析电网结构和状态脆弱性二级指标，对其进行归一化处理，在结构脆弱性方面，采用改进熵权法对结构脆弱性二级指标集
@@ -66,13 +66,6 @@
   最后，本文以 $IEEE39$ 标准算例模型为研究对象，依据电网脆弱性综合评估模型，分别对电力系统的结构和状态脆弱性进行分析，得到结构脆弱性和状态脆弱性评估结果，根据电网脆弱性综合指标，
   分析电网节点的综合脆弱性，验证了电网脆弱性综合评估模型的合理性。最后，基于聚类算法和电网脆弱性综合评估结果进行脆弱节点等级评估，根据得到的电网综合脆弱性等级评估结果，
   识别出电网的脆弱环节。
-  
-% 电力系统作为维持国计民生的重要组成部分，其稳定性、可靠性及安全性至关重要。近年来，世界各地发生的多起大停电事故也引起越来越多专家学者的关注。研究表明，大多数大停电事故的发生原因是局部故障。
-% % 结构和状态是电网脆弱性研究的两个重要方面，电网结构的完整性是维持电网稳定运行的基础，电网状态的不稳定会导致局部故障的发生。
-% 因此，综合评估和识别电网的脆弱环节并采取有效控制措施是避免大停电事故发生的关键。在此背景下，本文针对基于结构与状态的电网脆弱性综合评估模型展开研究，主要工作归纳如下：
-
-% % 在电力系统运行过程中，脆弱性是其固有属性，在扰动因素作用下，电网自身固有的脆弱性显现的概率大增，将对其稳定运行
-% % 造成威胁，因此有必要分析电力系统的脆弱性，识别电力系统的脆弱环节，科学合理地评估电网脆弱环节的脆弱性程度，对其进行结构优化和重点防护，保证电网稳定可靠运行。
 
 % 本文研究了复杂网络特征参数和网络模型，验证分析电力系统的小世界性和无标度性。通过阐述复杂网络脆弱性概念得出，复杂网络的脆弱性在于其子系统的存在性，明确了本文研究的关键问题。
 
@@ -92,7 +85,32 @@
 \ckeywords{复杂网络，结构脆弱性，状态脆弱性，综合评估模型，脆弱环节识别}
 
 \begin{eabstract}
+  As an important part of maintaining national economy and people's livelihood, the stability, reliability and safety of electric power system are of vital importance.
+  In recent years, more and more experts and scholars have paid more and more attention to the blackout around the world,the research shows that most of the causes of 
+  blackouts are local faults, and the key to avoid blackouts is to comprehensively evaluate and identify the vulnerable links of the power grid and take effective control 
+  measures. In this context, this thesis researchs the comprehensive evaluation model of power grid vulnerability based on structure and state.
+
+  Taking $IEEE30$, 39, 57 standard power grid model as an example, combined with the theory of complex network vulnerability, this thesis analyzes the Small-World and Scale-Free 
+  of power system, and clarifies the key issues of this thesis,combined with the characteristics of power system vulnerability, the definition of power system vulnerability is 
+  proposed, and the vulnerability model research and case analysis are carried out from two aspects of structure and state.In the aspect of structure, based on the complex 
+  network theory, the topological model of power grid is established, the structural vulnerability index is proposed, and the structural vulnerability model of power grid is 
+  established, in the aspect of state, the state vulnerability index is proposed from the aspects of node voltage stability, overload capacity and power grid loss, combined 
+  with the load probability model of power system, The state vulnerability index is calculated and analyzed by Monte Carlo method, and the state vulnerability model of power 
+  grid is established.
+
+  In view of the comprehensive quantitative assessment of power system vulnerability, this paper constructs a vulnerability index assessment system,select and analyze the 
+  secondary indexes of power grid structure and state vulnerability, and normalize them,In the aspect of structural vulnerability, the improved entropy weight method is used 
+  to allocate the weight of the secondary index set of structural vulnerability to obtain the primary index of structural vulnerability, in the aspect of state vulnerability, 
+  the method of maximum deviation is used to allocate the weight of the secondary index of state vulnerability to obtain the primary index of state vulnerability, and then the 
+  D-S evidence theory is used to fuse the primary index to obtain the comprehensive assessment index of power grid vulnerability model of power grid vulnerability based on 
+  structure and state is established.
+
+  Finally, this thesis takes the $IEEE39$ standard model as the research object, according to the comprehensive evaluation model of power grid vulnerability, 
+  analyzes the structure and state vulnerability of power system respectively, obtains the evaluation results of structure vulnerability and state vulnerability, analyzes 
+  the comprehensive vulnerability of power grid nodes according to the comprehensive index of power grid vulnerability, and verifies the rationality of the comprehensive 
+  evaluation model of power grid vulnerability. Finally, based on the clustering algorithm and the comprehensive evaluation results of power grid vulnerability, the 
+  vulnerable nodes are evaluated. According to the comprehensive evaluation results of power grid vulnerability, the vulnerable links of power grid are identified.
 
 \end{eabstract}
 
-\ekeywords{} 
+\ekeywords{Complex network，Structural vulnerability，State vulnerability，Comprehensive assessment model，Identification of vulnerable links} 
